@@ -91,13 +91,13 @@ $$C(\alpha) = (p(T) - \frac{\theta_3}{\theta_4})^2 + (r(T) - \frac{\theta_1}{\th
 
 To propagate uncertainty, we run optimal control on each sample generated with MCMC, so we can create a posterior distribution of the optimal controls as well. We can then create confidence intervals with the standard deviation at each time point across some 5,000 samples.
 
-#### Pseudo Spectral Method
+**Pseudo Spectral Method**
 
 We approximate our control and states using orthonormal Legendre polynomials, then substitute these approximations into our cost function and dynamical constraints to turn our ODE system into an algebraic one. Once this is done, we can use Gauss quadrature to optimize the new cost function, subject to the new dynamical constraints.
 
 <img width="1138" height="283" alt="Pseudospectral Control Results" src="psuedo_control.png"/>
 
-#### Pontryagin Maximal Principle
+**Pontryagin Maximal Principle**
 
 After constructing the Hamiltonian, we formulate the optimal control in terms of the costate variable, $\lambda$. We can then use the Shooting Method which utilizes an initial guess, $\lambda_0$, then uses root-finding to find the right value for $\lambda$ that satisfies the boundary conditions.
 
