@@ -31,7 +31,7 @@ where $\theta$ is parameter vector $[\theta_1,\theta_2,\theta_3,\theta_4,x_0,y_0
 We use data 20 years of local bunny and wolf populations. Note that we use synthetic data, so we know the true parameters for this experiment.
 
 
-<img width="600" height="300" alt="Frequentist Results" src="freq.png" />
+<img width="800" height="300" alt="Frequentist Results" src="freq.png" />
 
 
 #### Bayesian Approach
