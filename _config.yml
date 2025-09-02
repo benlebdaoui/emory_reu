@@ -8,4 +8,4 @@ plugins:
   - jekyll-seo-tag
 theme: minima
 # Site title
-site.title: "Inverse problems and uncertainty quantification for the control of dynamical systems"
+title: "Inverse problems and uncertainty quantification for the control of dynamical systems"
