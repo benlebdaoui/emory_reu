@@ -30,7 +30,8 @@ where $\theta$ is parameter vector $[\theta_1,\theta_2,\theta_3,\theta_4,x_0,y_0
 
 We use data 20 years of local bunny and wolf populations. Note that we use synthetic data, so we know the true parameters for this experiment.
 
-<img width="802" height="267" alt="Screen Shot 2025-07-18 at 4 52 45 PM" src="https://github.com/user-attachments/assets/aa4782ce-7899-4714-b6e9-f3b6f3060bd9" />
+
+<img width="600" height="300" alt="Frequentist Results" src="freq.png" />
 
 
 #### Bayesian Approach
@@ -62,7 +63,7 @@ Steps:
 
 Now we predict the future behavior of the bunny and wolf populations for the next 20 years to model future control strategies, and we can construct confidence and prediction intervals to quantify uncertainty from the noisy data:
 
-<img width="600" height="300" alt="MCMC Results" src="sythetic_mcmc_int.png" />
+<img width="600" height="300" alt="Bayesian Results" src="bayes.png" />
 
 
 ### Taking back the farm
@@ -91,12 +92,14 @@ To propagate uncertainty, we run optimal control on each sample generated with M
 #### Pseudo Spectral Method
 
 We approximate our control and states using orthonormal Legendre polynomials, then substitute these approximations into our cost function and dynamical constraints to turn our ODE system into an algebraic one. Once this is done, we can use Gauss quadrature to optimize the new cost function, subject to the new dynamical constraints.
-<img width="1138" height="283" alt="Pseudospectral Method Results" src="pseudo15.png"/>
+
+<img width="1138" height="283" alt="Pseudospectral Control Results" src="psuedo_control.png"/>
 
 #### Pontryagin Maximal Principle
 
 After constructing the Hamiltonian, we formulate the optimal control in terms of the costate variable, $\lambda$. We can then use the Shooting Method which utilizes an initial guess, $\lambda_0$, then uses root-finding to find the right value for $\lambda$ that satisfies the boundary conditions.
-<img width="1138" height="283" alt="PMP Method Results" src="pmp_result.png" />
+
+<img width="1138" height="283" alt="PMP Method Results" src="pmp_control.png" />
 
 ### So what did we do?
 We have created a full pipeline to take in noisy data, estimate the parameters of a model, derive and implement an optimal control for the system, and propagate uncertainty to quantify the confidence in our decision-making.
