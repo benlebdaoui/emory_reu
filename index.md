@@ -58,7 +58,9 @@ We do this through Markov Chain Monte Carlo (MCMC) Methods. Since we can't direc
 Steps:
 
 1) $\theta_j$ , sample $\theta^* \sim q(\theta_j)$
+
 2) Evaluate quality of $\theta^*$ compared to $\theta_j$ using $\Pi_{post}$
+
 3) Based on evaluation accept $\theta_{j+1} = \theta^*$ or reject $\theta_{j+1} = \theta_j$
 
 Now we predict the future behavior of the bunny and wolf populations for the next 20 years to model future control strategies, and we can construct confidence and prediction intervals to quantify uncertainty from the noisy data:
