@@ -18,7 +18,7 @@ $$\frac{dy}{dt} = -\theta_3 y + \theta_3 xy$$
 
 $$x(0) = x_0, \quad y(0) = y_0,$$
 
-where \(\theta_1,\theta_2,\theta_3,\theta_4, x_0, y_0\) are the parameters that govern the dynamics of this system. 
+where $\theta_1,\theta_2,\theta_3,\theta_4, x_0, y_0$ are the parameters that govern the dynamics of this system. 
 
 Of course, in the real world, we don't know what these governing parameters are! All we have access to is noisy and often incomplete data. From that data, we need to perform **parameter estimation** to obtain the parameters that will make the model reproduce the data we've observed (*psst* this is an inverse problem*).
 
@@ -26,7 +26,7 @@ Of course, in the real world, we don't know what these governing parameters are!
 We assume that our parameters are fixed unknowns. We want to minimize the distance between the output of our model and the data we are observing, measured with the Ordinary Least Squares (OLS) Estimator:
 
 $$\theta_{OLS} = argmin_{\theta}\sum_{i= 1}^N(F(x_i;\theta)-d_i)^2,$$
-where \(\theta\) is parameter vector \([\theta_1,\theta_2,\theta_3,\theta_4,x_0,y_0]\), \(F(x;\theta)\) is our model, and \(d\) is our data.
+where $\theta$ is parameter vector $[\theta_1,\theta_2,\theta_3,\theta_4,x_0,y_0]$, $F(x;\theta)$ is our model, and $d$ is our data.
 
 We use data 20 years of local bunny and wolf populations. Note that we use synthetic data, so we know the true parameters for this experiment.
 
@@ -42,9 +42,9 @@ Using **Bayes' theorem**, we combine prior knowledge with observed data:
 $$p(\theta|data) = p(data|\theta) \cdot p(\theta)$$
 
 Where:
-- \(p(\theta|data)\) = posterior distribution (what we want)
-- \(p(data|\theta)\) = likelihood (how well parameters explain data)
-- \(p(\theta)\) = prior distribution (our initial beliefs about parameters)
+- $p(\theta|data)$ = posterior distribution (what we want)
+- $p(data|\theta)$ = likelihood (how well parameters explain data)
+- $p(\theta)$ = prior distribution (our initial beliefs about parameters)
 
 This gives us:
 - Robustness to noise
@@ -69,11 +69,11 @@ Now we predict the future behavior of the bunny and wolf populations for the nex
 ### Taking back the farm
 **Goal:** limit the bunny boom in the spring without hurting the ecosystem! We can do this by driving the system of rabbits and wolves towards an equilibrium which will smooth population fluxuations without forcing either population to extinction.
 
-Controls, denoted \(\alpha(t)\), are actions that we take to change the system. The *cost function* measures how unfavorable controls are. The **optimal control** is the one that minimizes the cost function:
+Controls, denoted $\alpha(t)$, are actions that we take to change the system. The *cost function* measures how unfavorable controls are. The **optimal control** is the one that minimizes the cost function:
 
 $$u(t) = \text{argmin} C_{x,t}(\alpha).$$
 
-The cost function \(C_{x,t}(\alpha)\) is often the sum of two parts: a measure of the control's success \(g(x(T))\) at the end state, and an integral measuring the control's running cost. 
+The cost function $C_{x,t}(\alpha)$ is often the sum of two parts: a measure of the control's success $g(x(T))$ at the end state, and an integral measuring the control's running cost. 
 
 $$C_{x,t}(\alpha) = g(x(T)) + \int_{t_0}^{T} L(x(t), \alpha(t), t)$$
 
