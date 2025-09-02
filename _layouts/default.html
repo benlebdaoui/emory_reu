@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/css/custom.css">
   </head>
   <body>
+    <h1>{{ page.title | default: site.title }}</h1>
     {{ content }}
     <script>
       window.MathJax = {

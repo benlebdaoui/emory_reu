@@ -37,11 +37,11 @@ We'll assume our parameters are random variables, and we want to construct poste
 
 Using **Bayes' theorem**, we combine prior knowledge with observed data:
 
-$$p(\theta|data) = p(data|\theta) \cdot p(\theta)$$
+$$p(\theta\mid data) = p(data\mid\theta) \cdot p(\theta)$$
 
 Where:
-- $p(\theta|data)$ = posterior distribution (what we want)
-- $p(data|\theta)$ = likelihood (how well parameters explain data)
+- $p(\theta\mid data)$ = posterior distribution (what we want)
+- $p(data\mid \theta)$ = likelihood (how well parameters explain data)
 - $p(\theta)$ = prior distribution (our initial beliefs about parameters)
 
 This gives us:
@@ -49,11 +49,11 @@ This gives us:
 - Prior knowledge incorporation
 - Full uncertainty propagation
 
-We do this through Markov Chain Monte Carlo (MCMC) Methods. Since we can't directly calculate $p(\theta|data)$, MCMC creates a "chain" of parameter samples that eventually converges to the true posterior distribution.
+We do this through Markov Chain Monte Carlo (MCMC) Methods. Since we can't directly calculate $p(\theta \mid data)$, MCMC creates a "chain" of parameter samples that eventually converges to the true posterior distribution.
 
 **Metropolis-Hastings Algorithm**
 Proposal distribution: $q(\theta_j , \theta_{j-1})$
-Target distribution: $\Pi_{post}(\theta | d)$
+Target distribution: $\Pi_{post}(\theta \mid d)$
 Steps:
 1) $\theta_j$ , sample $\theta^* \sim q(\theta_j)$
 2) Evaluate quality of $\theta^*$ compared to $\theta_j$ using $\Pi_{post}$
