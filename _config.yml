@@ -3,4 +3,7 @@ kramdown:
   math_engine: mathjax
   math_engine_opts:
     preview: "TeX"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 theme: minima
